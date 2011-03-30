@@ -1,13 +1,15 @@
-<!--- Vikas's first commit -->
-
- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<link href="maindiv.css" type="text/css" rel="stylesheet">
+
 	<head>
+                  	<link href="maindiv.css" type="text/css" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<title>PlaceToCelebrate.com</title>
 	</head>
+
 	<body bgcolor="#F0F0F0">
+
+
 		<div id="center">
 		<div id="banner">
 			<b>The Title</b>
@@ -23,6 +25,7 @@
 		</div>
 		<div id="leftpane">
 			<b>The left Pane</b>
+                        <div id="menuitems"></div>
 			<div id="login">
 				 <FORM action="http://somesite.com/prog/adduser" method="post">
     				<P> 
@@ -34,9 +37,24 @@
 				 </FORM>
 			</div>
 		</div>
+<script type="text/javascript" src="js/code.js">
+</script>
+
+<script type="text/javascript">
+function handleRequest(req)
+{
+    var myData = JSON.parse(req.responseText,function (key, value) {
+                                                        var output = "<a href="+value+">"+key+"</a><br>";
+                                                       document.getElementById("menuitems").innerHTML=document.getElementById("menuitems").innerHTML+output;
+                                                       return value;});
+    
+}
+sendRequest('js/menulist.json',handleRequest);
+</script>
 		<div id="mainpane">
 			<b>Content</b>
 		</div>
 		</div>
-	</body>
+
+</body>
 </html>
