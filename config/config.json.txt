@@ -1,0 +1,3 @@
+{"mainpage":"mainpage.html",
+"contact":"contact.html",
+"about us":"about us.html"}
