@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+        <!-- new change -->
+	<link href="maindiv.css" type="text/css" rel="stylesheet">
+	<head>
+                  	<link href="maindiv.css" type="text/css" rel="stylesheet">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>PlaceToCelebrate.com</title>
+	</head>
+
+	<body bgcolor="#F0F0F0">
+
+
+		<div id="center">
+		<div id="banner">
+			<b>The Title</b>
+		</div>
+		<div id="tabs">
+			<b>Tabs</b>
+		</div>
+		<div id="searchpanel">
+			 <FORM action="http://somesite.com/prog/adduser" method="post">
+				<b>Search:</b> <INPUT type="text" name="search" id="searchtext">
+		    	<INPUT type="submit" value="Send">
+			 </FORM>
+		</div>
+		<div id="leftpane">
+			<b>The left Pane</b>
+                        <div id="menuitems">
+
+<iframe name="FRAME1" src="frame1link.html" width="100" height="80" frameborder="0" scrolling="no"></iframe>
+
+			<div id="login">
+				 <FORM action="http://somesite.com/prog/adduser" method="post">
+    				<P> 
+					Username: <INPUT type="text" name="firstname"><BR>
+    				Password: <INPUT type="password" name="lastname"><BR>
+			    	<INPUT type="submit" value="Send"><BR>
+					<a href=http://newuser.login><i>New User<b>Signup</b></i></a>
+    				</P>
+				 </FORM>
+			</div>
+		</div>
+<script type="text/javascript" src="js/code.js">
+</script>
+
+<script type="text/javascript">
+function handleRequest(req)
+{
+    var myData = JSON.parse(req.responseText,function (key, value) {
+                                                        var output = "<a href="+value+">"+key+"</a><br>";
+                                                       document.getElementById("menuitems").innerHTML=document.getElementById("menuitems").innerHTML+output;
+                                                       return value;});
+    
+}
+sendRequest('js/menulist.json',handleRequest);
+</script>
+		<div id="mainpane">
+			<b>Content</b>
+<div id="contents">
+<iframe name="FRAME2" src="frame2blank.html" width="335" height="280" frameborder="0" scrolling="no" ></iframe>
+		</div>
+		</div></div>
+
+</body>
+</html>
